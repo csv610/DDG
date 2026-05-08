@@ -16,6 +16,16 @@ The framework provides a practical interface for typical geometry operations on 
 - **Geodesics**: Computation of geodesic distances on surfaces.
 - **Hot2**: Implementation of the "Heat Method" for geodesics.
 
+## Contributions & Modernizations
+
+The original 2013 codebase has been significantly updated to meet modern software engineering standards:
+
+- **Unified Build System**: Replaced the fragmented subdirectory-based `Makefile` system with a root-level `CMakeLists.txt` for cross-platform compatibility and easier dependency management.
+- **Testing Suite**: Added a comprehensive unit testing framework in the `tests/` directory, covering all major modules (BaseCode, Geodesics, Fairing, etc.).
+- **Modern C++ Standards**: Updated the codebase to target **C++20**, enabling cleaner code and better performance.
+- **Improved Dependency Management**: Automated the discovery of SuiteSparse, OpenGL, and GLUT using CMake's `find_package` and customized search logic.
+- **Refined Project Structure**: Organized the codebase to support both library usage and standalone application builds with shared resources.
+
 ## Prerequisites
 
 To build and run the applications, you will need the following dependencies:
