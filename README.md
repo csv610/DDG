@@ -1,30 +1,35 @@
 # Discrete Differential Geometry (DDG) Framework
 
-This repository contains a framework for writing digital geometry processing (DGP) applications based on Discrete Exterior Calculus (DEC). It was originally developed for the SIGGRAPH 2013 course on Discrete Differential Geometry.
+**Original Research & Framework by:**
+**Keenan Crane, Fernando de Goes, Mathieu Desbrun, and Peter Schröder**
+*(Originally developed for the SIGGRAPH 2013 Course on Discrete Differential Geometry)*
+
+---
+
+This repository contains the digital geometry processing (DGP) framework based on Discrete Exterior Calculus (DEC) as presented in the seminal SIGGRAPH 2013 course. All core algorithms, mathematical foundations, and the original DEC library implementation are the work of the researchers credited above.
 
 ## Overview
 
 The framework provides a practical interface for typical geometry operations on simplicial complexes (meshes). It includes a built-in viewer for real-time visualization and interaction with 3D models.
 
-### Sub-projects
+### Research Modules
 
-- **BaseCode**: The core library providing data structures for meshes (HalfEdge), linear algebra wrappers, and the basic DEC operators.
-- **Connection**: Implementation of discrete connections on surface meshes.
-- **Elasticity**: Physical simulation and deformation using elastic energy.
-- **Fairing**: Mesh smoothing and fairing techniques.
-- **Flatten**: Mesh parameterization and flattening algorithms.
-- **Geodesics**: Computation of geodesic distances on surfaces.
-- **Hot2**: Implementation of the "Heat Method" for geodesics.
+- **BaseCode**: Core DEC operators and mesh data structures.
+- **Connection**: Discrete connections on surface meshes.
+- **Elasticity**: Physical simulation via elastic energy.
+- **Fairing**: Mesh smoothing and fairing.
+- **Flatten**: Mesh parameterization and flattening.
+- **Geodesics**: Computation of geodesic distances.
+- **Hot2**: Heat Method for geodesics.
 
-## Contributions & Modernizations
+## Maintenance & Engineering Enhancements
 
-The original 2013 codebase has been significantly updated to meet modern software engineering standards:
+To ensure the continued utility of this foundational research codebase in modern environments, the following **engineering-only** updates have been applied:
 
-- **Unified Build System**: Replaced the fragmented subdirectory-based `Makefile` system with a root-level `CMakeLists.txt` for cross-platform compatibility and easier dependency management.
-- **Testing Suite**: Added a comprehensive unit testing framework in the `tests/` directory, covering all major modules (BaseCode, Geodesics, Fairing, etc.).
-- **Modern C++ Standards**: Updated the codebase to target **C++20**, enabling cleaner code and better performance.
-- **Improved Dependency Management**: Automated the discovery of SuiteSparse, OpenGL, and GLUT using CMake's `find_package` and customized search logic.
-- **Refined Project Structure**: Organized the codebase to support both library usage and standalone application builds with shared resources.
+- **Modern Build Orchestration**: Replaced the original 2013 `Makefile` system with a unified `CMakeLists.txt` to support modern compilers and automated dependency discovery (SuiteSparse, OpenGL, GLUT).
+- **Standards Update**: Minimal refactoring to support **C++20** and resolve deprecation warnings in modern GL/C++ environments.
+- **Automated Validation**: Added a unit testing suite (`tests/`) to verify that the implementation of the researchers' algorithms remains correct across different platforms and compiler versions.
+- **Dependency Management**: Streamlined linking with modern versions of SuiteSparse and the macOS Accelerate framework.
 
 ## Prerequisites
 
@@ -81,16 +86,6 @@ Run any of the sub-project executables by providing an input mesh file (OBJ form
 - **Cmd/Ctrl + r**: Reload the input mesh.
 - **- / =**: Decrease/increase the time step for simulations.
 
-## Authors
-
-Developed by:
-- **Keenan Crane**
-- **Fernando de Goes**
-- **Mathieu Desbrun**
-- **Peter Schröder**
-
-Originally for the SIGGRAPH 2013 Course on Discrete Differential Geometry.
-
 ## License
 
-This project is provided under a BSD-style license. See the `HOWTO` file for the full license text.
+This project is provided under a BSD-style license. All original research and code remain the intellectual property of the original authors. See the `HOWTO` file for the full license text.
