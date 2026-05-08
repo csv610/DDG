@@ -5,7 +5,8 @@
 *.slo
 *.lo
 *.o
-*.obj
+# Windows object files - typically compiled, but conflicts with Wavefront OBJ
+# *.obj 
 
 # Precompiled Headers
 *.gch
